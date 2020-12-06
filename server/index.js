@@ -8,7 +8,7 @@ const io = require("socket.io")(server);
 const config = require("./config/key");
 
 const mongoose = require("mongoose");
-const connect = mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+const connect = mongoose.connect(process.env.mongoURI || config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected...'))
   .catch(err => console.log(err));
 
