@@ -31,7 +31,7 @@ var storage = multer.diskStorage({
     cb(null, 'uploads/')
   },
   filename: function (req, file, cb) {
-    cb(null, `${Date.now()}_${file.originalname}`)
+    cb(null, `${file.originalname}`)
   },
   // fileFilter: (req, file, cb) => {
   //   const ext = path.extname(file.originalname)
@@ -62,7 +62,7 @@ io.on("connection", socket => {
           let chat = new Chat({ message: msg.chatMessage, sender:msg.userId, type: msg.type })
 
           chat.save((err, doc) => {
-            console.log(doc)
+            // console.log(doc)
             if(err) return res.json({ success: false, err })
 
             Chat.find({ "_id": doc._id })

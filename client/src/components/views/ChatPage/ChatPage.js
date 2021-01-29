@@ -21,7 +21,7 @@ export class ChatPage extends Component {
         this.socket = io(server);
 
         this.socket.on("Output Chat Message", messageFromBackEnd => {
-            console.log(messageFromBackEnd)
+            // console.log(messageFromBackEnd)
             this.props.dispatch(afterPostMessage(messageFromBackEnd));
         })
     }
@@ -43,7 +43,7 @@ export class ChatPage extends Component {
         ));
 
     onDrop = (files) => {
-        console.log(files)
+        // console.log(files)
 
 
         if (this.props.user.userData && !this.props.user.userData.isAuth) {

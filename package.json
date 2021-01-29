@@ -10,14 +10,14 @@
   },
   "scripts": {
     "build": "cd client && npm run build",
-    "install-client":"cd client && npm install",
+    "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "node server/index.js",
     "backend": "nodemon server/index.js",
     "frontend": "cd client && npm start",
-    "dev": "concurrently \"npm run backend\" \"cd client && npm start\""
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "author": "John ahn",
   "license": "ISC",
