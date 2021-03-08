@@ -13,7 +13,9 @@ export default function (ComposedClass, reload, adminRoute = null) {
             dispatch(auth()).then(async response => {
                 if (await !response.payload.isAuth) {
                     if (reload) {
+                        alert('Please Log in first');
                         props.history.push('/register_login')
+                        
                     }
                 } else {
                     if (adminRoute && !response.payload.isAdmin) {

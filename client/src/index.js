@@ -4,6 +4,9 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
+// import '../node_modules/@mdi/font/css/materialdesignicons.min.css';
+// import '../node_modules/materialize-css/dist/css/materialize.min.css';
+// import '../node_modules/materialize-css/dist/js/materialize.min.js'
 
 import Reducer from './_reducers';
 import { Provider } from 'react-redux';
